@@ -23,8 +23,89 @@ jobs:
               </pluginRepositories>
             </project>' > pom.xml
         modules='
-          mod-agreements master/service/src/main/okapi/ModuleDescriptor-template.json
+          folio-custom-fields
+          mod-agreements       master/service/src/main/okapi/ModuleDescriptor-template.json
+          mod-audit
+          mod-authtoken
+          mod-batch-print
+          mod-bulk-operations
+          mod-calendar
+          mod-camunda
+          mod-circulation
+          mod-circulation-item
+          mod-circulation-storage
+          mod-configuration
+          mod-consortia
+          mod-courses
+          mod-copycat
+          mod-data-export
+          mod-data-export-spring
+          mod-data-export-worker
+          mod-data-import
+          mod-dcb
+          mod-di-converter-storage
+          mod-ebsconet
+          mod-entities-link
+          mod-email
+          mod-eusage-reports
+          mod-erm-usage
+          mod-erm-usage-harvester
+          mod-event-config
+          mod-feesfines
+          mod-finance
+          mod-finance-storage
+          mod-fqm-manager
+          mod-gobi
+          mod-graphql
+          mod-harvester
+          mod-harvester-admin
+          mod-inn-reach
+          mod-inventory
+          mod-invoice
+          mod-invoice-storage
+          mod-inventory-storage
+          mod-inventory-update
+          mod-kb-ebsco-java
+          mod-ldp
+          mod-licenses              master/service/src/main/okapi/ModuleDescriptor-template.json
+          mod-lists
+          mod-login
+          mod-login-saml
+          mod-marc-migrations
+          mod-ncip
+          mod-notes
+          mod-notify
+          mod-oa
+          mod-oai-pmh
+          mod-orders
+          mod-orders-storage
+          mod-organizations
+          mod-organizations-storage
+          mod-patron-blocks
+          mod-patron 
           mod-permissions
+          mod-pubsub
+          mod-password-validator
+          mod-quick-marc
+          mod-requests-mediated
+          mod-reading-room
+          mod-record-specifications
+          mod-remote-storage
+          mod-rtac
+          mod-search
+          mod-sender
+          mod-serials-management    master/service/src/main/okapi/ModuleDescriptor-template.json
+          mod-service-interaction   master/service/src/main/okapi/ModuleDescriptor-template.json
+          mod-settings
+          mod-source-record-storage
+          mod-source-record-manager
+          mod-tags
+          mod-template-engine
+          mod-tlr
+          mod-user-import
+          mod-users-bl
+          mod-users
+          mod-workflow
         '
         echo "$modules" | while read line; do
           set -- $line
