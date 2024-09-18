@@ -45,7 +45,7 @@ jobs:
           mod-dcb
           mod-di-converter-storage
           mod-ebsconet
-          mod-entities-link
+          mod-entities-links
           mod-email
           mod-eusage-reports
           mod-erm-usage
