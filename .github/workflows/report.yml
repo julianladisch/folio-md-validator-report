@@ -1,0 +1,24 @@
+name: Module Descriptor Validation Report
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        modules='
+          mod-agreements master/service/src/main/okapi/ModuleDescriptor-template.json
+          mod-permissions
+        '
+        echo "$modules" | while read line; do
+          set -- $line
+          if [ -z "$1" ]; then
+            continue
+          fi
+          path="${2:-master/descriptors/ModuleDescriptor-template.json}"
+          wget "https://raw.githubusercontent.com/folio-org/$1/$path" -O /tmp/md
+          echo "$1" >> $GITHUB_STEP_SUMMARY
+          mvn -B org.folio:folio-module-descriptor-validator:1.0.0:validate -DmoduleDescriptorFile=/tmp/md \
+            | sed -n '/^\[ERROR\] -> \[Help 1\]/q; /^\[ERROR\] /{s///; s/^Failed.*Module descriptor not valid: \[ {$/[ {/; p}' \
+            >> $GITHUB_STEP_SUMMARY
+          echo >> $GITHUB_STEP_SUMMARY
+        done
