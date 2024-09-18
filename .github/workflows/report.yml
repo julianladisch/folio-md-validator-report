@@ -99,7 +99,7 @@ jobs:
           mod-user-import
           mod-users-bl
           mod-users
-          mod-workflow              master/service/src/main/okapi/ModuleDescriptor-template.json
+          mod-workflow              master/service/descriptors/ModuleDescriptor-template.json
         '
         echo "$modules" | while read line; do
           set -- $line
