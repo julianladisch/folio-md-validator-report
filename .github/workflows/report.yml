@@ -73,7 +73,7 @@ jobs:
           mod-ncip
           mod-notes
           mod-notify
-          mod-oa
+          mod-oa                    master/service/src/main/okapi/ModuleDescriptor-template.json
           mod-oai-pmh
           mod-orders
           mod-orders-storage
