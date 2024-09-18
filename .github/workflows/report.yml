@@ -2,12 +2,8 @@ name: Module Descriptor Validation Report
 on: workflow_dispatch
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-    - uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '17'
     - run: |
         echo '<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
               <modelVersion>4.0.0</modelVersion>
@@ -103,7 +99,7 @@ jobs:
           mod-user-import
           mod-users-bl
           mod-users
-          mod-workflow
+          mod-workflow              master/service/src/main/okapi/ModuleDescriptor-template.json
         '
         echo "$modules" | while read line; do
           set -- $line
