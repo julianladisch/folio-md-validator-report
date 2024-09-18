@@ -57,7 +57,6 @@ jobs:
           mod-fqm-manager
           mod-gobi
           mod-graphql               master/ModuleDescriptor.json
-          mod-harvester-admin
           mod-inn-reach
           mod-inventory
           mod-invoice
