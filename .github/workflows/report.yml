@@ -8,6 +8,7 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
+        cache: 'maven'
     - run: |
         echo '<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
               <modelVersion>4.0.0</modelVersion>
@@ -56,7 +57,7 @@ jobs:
           mod-finance-storage
           mod-fqm-manager
           mod-gobi
-          mod-graphql
+          mod-graphql               master/ModuleDescriptor.json
           mod-harvester
           mod-harvester-admin
           mod-inn-reach
