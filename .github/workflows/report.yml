@@ -33,9 +33,8 @@ jobs:
           fi
           path="${2:-master/descriptors/ModuleDescriptor-template.json}"
           wget "https://raw.githubusercontent.com/folio-org/$1/$path" -O /tmp/md
-          echo "$1" >> $GITHUB_STEP_SUMMARY
+          echo "## $1" >> $GITHUB_STEP_SUMMARY
           mvn -B org.folio:folio-module-descriptor-validator:1.0.0:validate -DmoduleDescriptorFile=/tmp/md \
             | sed -n '/^\[ERROR\] -> \[Help 1\]/q; /^\[ERROR\] /{s///; s/^Failed.*Module descriptor not valid: \[ {$/[ {/; p}' \
             >> $GITHUB_STEP_SUMMARY
-          echo >> $GITHUB_STEP_SUMMARY
         done
